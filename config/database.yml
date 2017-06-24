@@ -23,7 +23,7 @@ test:
 production:
   adapter: mysql2
   database: loves
-  username: loves
+  username: love
   password: s19930528
   host: localhost
   charset: utf8mb4
