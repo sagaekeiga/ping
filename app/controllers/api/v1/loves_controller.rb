@@ -13,8 +13,8 @@ module Api
          logger.debug("params")
          logger.debug(params)
          logger.debug("params")
-         @card = Card.find_by(name: params) if !params.nil?
-         render json: @card
+         @love = Love.find_by(title: params) if !params.nil?
+         render json: @love
       end
         
     end
