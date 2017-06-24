@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  get 'pages/love'
 
 
   namespace :api, { format: 'json' } do
     namespace :v1, { format: 'json' } do 
       get 'loves/index'
       post 'loves/detail'
+      get 'laughters/index'
+      post 'laughters/detail'
     end
   end
   
   resources :loves
+  resources :laughters
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,21 @@
+<table class="ui celled table">
+  <thead>
+    <tr><th>ID</th>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>管理</th>
+  </tr></thead>
+  <tbody>
+    <% @laughters.each do |laughter| %>
+        <tr>
+         <td ><%= laughter.id %></td>
+         <td><%= link_to"#{laughter.title}", laughter, { :target => "_blank"}  %></td>
+         <td ><%= laughter.content %></td>
+         <td>
+          <%= link_to "編集", edit_laughter_path(laughter.id), { :class => "ui olive button" } %>
+          <%= link_to "削除", laughter, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+         </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
