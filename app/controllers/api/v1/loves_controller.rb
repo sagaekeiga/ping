@@ -13,7 +13,7 @@ module Api
          logger.debug("params")
          logger.debug(params)
          logger.debug("params")
-         @love = Love.find_by(title: params) if !params.nil?
+         @love = Love.find_by(id: params) if !params.nil?
          render json: @love
       end
         
