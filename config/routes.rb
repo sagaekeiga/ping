@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  post 'pages/ping'
+  get 'pages/love'
+
+
+  namespace :api, { format: 'json' } do
+    namespace :v1, { format: 'json' } do 
+      get 'loves/index'
+      post 'loves/detail'
+    end
+  end
   
-  resources :pings
+  resources :loves
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,20 @@
+<table class="ui celled table">
+  <thead>
+    <tr><th>ID</th>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr></thead>
+  <tbody>
+    <% @loves.each do |love| %>
+        <tr>
+         <td ><%= love.id %></td>
+         <td><%= link_to"#{love.title}", love, { :target => "_blank"}  %></td>
+         <td ><%= love.content %></td>
+         <td>
+          <%= link_to "編集", edit_lofe_path(love.id), { :class => "ui olive button" } %>
+          <%= link_to "削除", love, { :class => "ui red button", method: :delete, data: { confirm: "本当に削除してもいいですか？" }} %>
+         </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
