@@ -1,6 +1,6 @@
 module Api
   module V1
-    class LaughterController < ApplicationController
+    class LaughtersController < ApplicationController
     skip_before_filter :verify_authenticity_token
       
       # encoding: utf-8
