@@ -1,6 +1,8 @@
 class LovesController < ApplicationController
     http_basic_authenticate_with name: "sagae", password: "s19930528"
     
+    # encoding: utf-8
+
     def index
       @loves = Love.all
     end
